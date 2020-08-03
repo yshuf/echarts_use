@@ -1,0 +1,11 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.list_box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}

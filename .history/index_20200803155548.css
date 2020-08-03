@@ -1,0 +1,36 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.list_box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.list_box .list_item {
+    margin: 20px 0;
+    width: 580px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid rgba(214, 214, 214, 0.5);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.list_item h3 {
+    text-align: center;
+    margin: 0;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(214, 214, 214, 0.5);
+    padding: 5px 0;
+}
+
+.list_item .chart {
+    width: 450px;
+    height: 450px;
+}

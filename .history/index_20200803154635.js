@@ -1,0 +1,1 @@
+var echart1 = document.getElementById('#')
