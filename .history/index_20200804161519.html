@@ -51,18 +51,6 @@
 				<h3>玫瑰饼图 / 环图</h3>
 				<div id="chart10" class="chart"></div>
 			</div>
-			<div class="list_item">
-				<h3>单个数据环形统计</h3>
-				<div id="chartA" class="chart"></div>
-			</div>
-			<div class="list_item">
-				<h3>玫瑰饼图 / 环图</h3>
-				<div id="chartB" class="chart"></div>
-			</div>
-			<div class="list_item">
-				<h3>玫瑰饼图 / 环图</h3>
-				<div id="chartC" class="chart"></div>
-			</div>
 		</div>
 		<script>
 			let that = this
@@ -124,8 +112,6 @@
 			let myChart8 = echarts.init(document.getElementById('chart8'))
 			let myChart9 = echarts.init(document.getElementById('chart9'))
 			let myChart10 = echarts.init(document.getElementById('chart10'))
-			let myChartA = echarts.init(document.getElementById('chartA'))
-			let myChartB = echarts.init(document.getElementById('chartB'))
 			myChart1.setOption({
 				// 图例
 				legend: {
@@ -1095,7 +1081,7 @@
 						// radius: '55%', // 饼图
 						radius: ['10%', '50%'], // 环图
 						center: ['50%', '50%'],
-						data: data3.sort(function (a, b) {
+						data: data.sort(function (a, b) {
 							return a.value - b.value
 						}),
 						// 是否展示成南丁格尔图，通过半径区分数据大小。可选择两种模式：
@@ -1130,172 +1116,6 @@
 					'rgba(77, 214, 140, 1)',
 					'rgba(0, 90, 255, 1)',
 					'rgba(0,191,254,1)',
-				],
-			})
-			let data4 = {
-				entCount: 5,
-				amount: 0.27,
-				rate: 83.33,
-			}
-			myChartA.setOption({
-				legend: {
-					data: ['单笔授信500万以下占全部授信企业比重'],
-					itemWidth: 14,
-					itemHeight: 14,
-					bottom: 0,
-					textStyle: {
-						color: '#333',
-					},
-				},
-				graphic: [
-					{
-						type: 'text',
-						left: 'center',
-						top: '35%',
-						style: {
-							text: data4.rate + '%',
-							fontSize: 22,
-							fill: '#333',
-						},
-					},
-					{
-						type: 'text',
-						left: 'center',
-						top: '45%',
-						style: {
-							text: data4.entCount + '家企业',
-							fill: '#333',
-							fontSize: 16,
-							fontWeight: 'normal',
-						},
-					},
-				],
-				series: [
-					{
-						name: '融资规模统计',
-						type: 'pie',
-						radius: ['55%', '60%'],
-						center: ['50%', '40%'],
-						label: {
-							normal: {
-								formatter: '{c}亿元',
-								fontSize: 20,
-								color: '#333',
-							},
-						},
-						data: [
-							{
-								value: data4.amount.toFixed(2),
-								selected: true,
-								name: '单笔授信500万以下占全部授信企业比重',
-								label: {
-									show: true,
-								},
-								labelLine: {
-									show: true,
-								},
-								itemStyle: {
-									normal: {
-										color: new echarts.graphic.LinearGradient(
-											0,
-											0,
-											0,
-											1,
-											[
-												{
-													offset: 0,
-													color:
-														'rgba(0, 204, 255, 1)', // 0% 处的颜色
-												},
-												{
-													offset: 1,
-													color:
-														'rgba(0, 90, 255, 1)', // 100% 处的颜色
-												},
-											]
-										),
-										// 圆角
-										borderColor: new echarts.graphic.LinearGradient(
-											0,
-											0,
-											0,
-											1,
-											[
-												{
-													offset: 0,
-													color:
-														'rgba(0, 204, 255, 1)', // 0% 处的颜色
-												},
-												{
-													offset: 1,
-													color:
-														'rgba(0, 90, 255, 1)', // 100% 处的颜色
-												},
-											]
-										),
-										borderWidth: 15,
-										shadowColor:
-											'rgba(255, 255, 255, 0.35)',
-										shadowBlur: 12,
-									},
-								},
-							},
-							{
-								// 空缺处
-								value: (
-									data4.amount / (data4.rate / 100) -
-									data4.amount
-								).toFixed(2),
-								name: '',
-								label: {
-									show: false,
-								},
-								itemStyle: {
-									normal: {
-										label: {
-											show: false,
-										},
-										labelLine: {
-											show: false,
-										},
-										color: 'rgba(0, 0, 0, 0)',
-										borderColor: 'rgba(0, 0, 0, 0)',
-										borderWidth: 0,
-									},
-									emphasis: {
-										label: {
-											show: false,
-										},
-										labelLine: {
-											show: false,
-										},
-									},
-								},
-							},
-						],
-					},
-					{
-						// 底色
-						type: 'pie',
-						radius: ['52%', '62%'],
-						center: ['50.5%', '42%'],
-						hoverAnimation: false,
-						data: [
-							{
-								value: 100,
-								itemStyle: {
-									color: 'rgba(44, 84, 151, 0.8)',
-								},
-								emphasis: {
-									show: false,
-								},
-							},
-						],
-						labelLine: {
-							show: false,
-						},
-						z: 0,
-					},
 				],
 			})
 		</script>

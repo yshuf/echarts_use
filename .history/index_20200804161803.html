@@ -1132,11 +1132,6 @@
 					'rgba(0,191,254,1)',
 				],
 			})
-			let data4 = {
-				entCount: 5,
-				amount: 0.27,
-				rate: 83.33,
-			}
 			myChartA.setOption({
 				legend: {
 					data: ['单笔授信500万以下占全部授信企业比重'],
@@ -1153,7 +1148,7 @@
 						left: 'center',
 						top: '35%',
 						style: {
-							text: data4.rate + '%',
+							text: data.rate + '%',
 							fontSize: 22,
 							fill: '#333',
 						},
@@ -1163,7 +1158,7 @@
 						left: 'center',
 						top: '45%',
 						style: {
-							text: data4.entCount + '家企业',
+							text: data.entCount + '家企业',
 							fill: '#333',
 							fontSize: 16,
 							fontWeight: 'normal',
@@ -1185,7 +1180,7 @@
 						},
 						data: [
 							{
-								value: data4.amount.toFixed(2),
+								value: data.amount.toFixed(2),
 								selected: true,
 								name: '单笔授信500万以下占全部授信企业比重',
 								label: {
@@ -1243,8 +1238,8 @@
 							{
 								// 空缺处
 								value: (
-									data4.amount / (data4.rate / 100) -
-									data4.amount
+									data.amount / (data.rate / 100) -
+									data.amount
 								).toFixed(2),
 								name: '',
 								label: {
