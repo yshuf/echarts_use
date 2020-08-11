@@ -6,8 +6,7 @@
 		<title>Document</title>
 		<link rel="stylesheet" href="index.css" />
 		<script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
-		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.js"></script>
-		<!-- <script src="echarts-liquidfill.js"></script> -->
+		<script src="echarts-liquidfill.js"></script>
 		<script src="index.js"></script>
 	</head>
 
@@ -1726,7 +1725,7 @@
 					value: 200,
 				},
 			]
-			let zhejiang = './data/zhejiang.json'
+			let zhejiang = '/data/zhejiang.json'
 			$.getJSON(zhejiang, function (obj) {
 				echarts.registerMap('zhejiang', obj)
 

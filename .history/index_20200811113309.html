@@ -6,8 +6,7 @@
 		<title>Document</title>
 		<link rel="stylesheet" href="index.css" />
 		<script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
-		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.js"></script>
-		<!-- <script src="echarts-liquidfill.js"></script> -->
+		<script src="echarts-liquidfill.js"></script>
 		<script src="index.js"></script>
 	</head>
 
@@ -1638,151 +1637,49 @@
 					},
 				],
 			})
-			// myChartE.setOption({
-			// 	series: [
-			// 		{
-			// 			type: 'liquidFill',
-			// 			radius: '80%',
-			// 			backgroundStyle: {
-			// 				color: 'transparent',
-			// 			},
-			// 			outline: {
-			// 				borderDistance: 0,
-			// 				itemStyle: {
-			// 					borderWidth: 2,
-			// 					borderColor: 'rgba(0, 140, 239, 1)',
-			// 					shadowColor: 'rgba(255, 255, 255, 1)',
-			// 					shadowBlur: 15,
-			// 				},
-			// 			},
-			// 			data: [
-			// 				{
-			// 					value: 63 / 100,
-			// 					name: '融资对接率',
-			// 					direction: 'left',
-			// 				},
-			// 				// 层次
-			// 				0.5,
-			// 				0.4,
-			// 				0.3,
-			// 			],
-			// 			label: {
-			// 				normal: {
-			// 					textStyle: {
-			// 						color: '#333',
-			// 						fontSize: 30,
-			// 						fontWeight: 'normal',
-			// 						fontFamily: 'DINCondensed-Bold',
-			// 					},
-			// 					position: ['50%', '30%'],
-			// 				},
-			// 			},
-			// 		},
-			// 	],
-			// })
-			let dataMap = [
-				{
-					name: '杭州市',
-					value: 400,
-				},
-				{
-					name: '湖州市',
-					value: 125,
-				},
-				{
-					name: '嘉兴市',
-					value: 300,
-				},
-				{
-					name: '绍兴市',
-					value: 20,
-				},
-				{
-					name: '宁波市',
-					value: 10,
-				},
-				{
-					name: '舟山市',
-					value: 300,
-				},
-				{
-					name: '衢州市',
-					value: 200,
-				},
-				{
-					name: '金华市',
-					value: 133,
-				},
-				{
-					name: '台州市',
-					value: 50,
-				},
-				{
-					name: '丽水市',
-					value: 100,
-				},
-				{
-					name: '温州市',
-					value: 200,
-				},
-			]
-			let zhejiang = './data/zhejiang.json'
-			$.getJSON(zhejiang, function (obj) {
-				echarts.registerMap('zhejiang', obj)
-
-				myChartF.setOption({
-					tooltip: {
-						trigger: 'item',
-						formatter: function (params) {
-							if (typeof params.value[2] == 'undefined') {
-								return params.name + ' : ' + params.value
-							} else {
-								return params.name + ' : ' + params.value[2]
-							}
+			myChartE.setOption({
+				series: [
+					{
+						type: 'liquidFill',
+						radius: '80%',
+						backgroundStyle: {
+							color: 'transparent',
 						},
-					},
-					visualMap: {
-						show: true,
-						min: 0,
-						max: 500,
-						left: 'left',
-						top: 'bottom',
-						text: ['高', '低'], // 文本，默认为数值文本
-						calculable: true,
-						inRange: {
-							color: ['#9dc4f6', '#3089f9'],
-						},
-					},
-					series: [
-						{
-							type: 'map',
-							map: 'zhejiang',
-							mapType: 'zhejiang',
-							label: {
-								show: true,
-								color: '#ffffff',
-								emphasis: {
-									color: 'white',
-									show: false,
-								},
-							},
+						outline: {
+							borderDistance: 0,
 							itemStyle: {
-								normal: {
-									areaColor: '#3a7fd5',
-									borderColor: '#9dc4f6', //线
-									borderWidth: 1,
-									shadowColor: '#092f8f', //外发光
-									shadowBlur: 10,
-								},
-								emphasis: {
-									areaColor: '#0a2dae', //悬浮区背景
-								},
+								borderWidth: 2,
+								borderColor: 'rgba(0, 140, 239, 1)',
+								shadowColor: 'rgba(255, 255, 255, 1)',
+								shadowBlur: 15,
 							},
-							data: dataMap,
 						},
-					],
-				})
+						data: [
+							{
+								value: 63 / 100,
+								name: '融资对接率',
+								direction: 'left',
+							},
+							// 层次
+							0.5,
+							0.4,
+							0.3,
+						],
+						label: {
+							normal: {
+								textStyle: {
+									color: '#333',
+									fontSize: 30,
+									fontWeight: 'normal',
+									fontFamily: 'DINCondensed-Bold',
+								},
+								position: ['50%', '30%'],
+							},
+						},
+					},
+				],
 			})
+			myChartF.setOption({})
 		</script>
 	</body>
 </html>

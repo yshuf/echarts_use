@@ -6,8 +6,6 @@
 		<title>Document</title>
 		<link rel="stylesheet" href="index.css" />
 		<script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
-		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.js"></script>
-		<!-- <script src="echarts-liquidfill.js"></script> -->
 		<script src="index.js"></script>
 	</head>
 
@@ -64,18 +62,6 @@
 			<div class="list_item">
 				<h3>带偏移的双象形柱图</h3>
 				<div id="chartC" class="chart"></div>
-			</div>
-			<div class="list_item">
-				<h3>重复象形柱图</h3>
-				<div id="chartD" class="chart"></div>
-			</div>
-			<div class="list_item">
-				<h3>简单水波图</h3>
-				<div id="chartE" class="chart"></div>
-			</div>
-			<div class="list_item">
-				<h3>简单地图</h3>
-				<div id="chartF" class="chart"></div>
 			</div>
 		</div>
 		<script>
@@ -141,9 +127,6 @@
 			let myChartA = echarts.init(document.getElementById('chartA'))
 			let myChartB = echarts.init(document.getElementById('chartB'))
 			let myChartC = echarts.init(document.getElementById('chartC'))
-			let myChartD = echarts.init(document.getElementById('chartD'))
-			let myChartE = echarts.init(document.getElementById('chartE'))
-			let myChartF = echarts.init(document.getElementById('chartF'))
 			myChart1.setOption({
 				// 图例
 				legend: {
@@ -1419,21 +1402,6 @@
 					},
 				],
 			})
-			var ageDataLeft = []
-			var ageDataRight = []
-
-			os_agevalue.forEach((item) => {
-				ageDataLeft.push({
-					value: item,
-					// 设置偏移量
-					symbolOffset: ['-20%', 0],
-				})
-				ageDataRight.push({
-					value: item,
-					// 设置偏移量
-					symbolOffset: ['20%', 0],
-				})
-			})
 			myChartC.setOption({
 				grid: {
 					top: '10%',
@@ -1537,251 +1505,6 @@
 						data: ageDataRight,
 					},
 				],
-			})
-			myChartD.setOption({
-				backgroundColor: '#101a3c',
-				grid: {
-					left: '10%',
-					top: 10,
-					bottom: 10,
-				},
-				tooltip: {
-					trigger: 'item',
-					textStyle: {
-						fontSize: 14,
-					},
-					formatter: '{b0}:{c0}',
-				},
-				xAxis: {
-					splitLine: {
-						show: false,
-					},
-					axisLine: {
-						show: false,
-					},
-					axisLabel: {
-						show: false,
-					},
-					axisTick: {
-						show: false,
-					},
-				},
-				yAxis: [
-					{
-						type: 'category',
-						inverse: false,
-						data: [
-							'山西',
-							'四川',
-							'西藏',
-							'北京',
-							'上海',
-							'内蒙古',
-							'云南',
-							'黑龙江',
-							'广东',
-							'江苏',
-						],
-						axisLine: {
-							show: false,
-						},
-						axisTick: {
-							show: false,
-						},
-						axisLabel: {
-							textStyle: {
-								color: '#fff',
-								fontSize: 16.25,
-							},
-						},
-					},
-				],
-				series: [
-					{
-						type: 'pictorialBar',
-						symbol:
-							'path://M1017.66787896 459.89818156L836.57696927 644.21818156 879.34060614 904.72727281c6.10909125 36.82909125-17.45454563 71.91272719-52.71272719 78.37090875a62.4 62.4 0 0 1-41.45454562-6.89454562l-224.29090875-123.05454469-223.85454563 122.79272719a63.53454563 63.53454563 0 0 1-87.62181843-28.45090969 70.34181844 70.34181844 0 0 1-6.45818157-42.93818156l42.76363594-260.59636313L104.53333333 459.89818156a69.90545437 69.90545437 0 0 1-1.13454563-95.91272719 64.05818156 64.05818156 0 0 1 37.09090969-19.72363593l250.47272719-37.87636407L502.67151489 69.78909125A64.23272719 64.23272719 0 0 1 560.88242458 32c24.69818156 0 47.12727281 14.57454563 58.03636313 37.78909125l111.97090968 236.77090875 250.29818157 37.96363594c35.52 5.23636406 60.21818156 39.53454562 55.24363593 76.5381825a68.94545438 68.94545438 0 0 1-18.67636312 38.83636312z',
-						symbolRepeat: true,
-						symbolMargin: '5%',
-						symbolClip: 'true',
-						symbolSize: 20,
-						symbolPosition: 'start',
-
-						label: {
-							normal: {
-								show: true,
-								position: 'insideRight',
-								offset: [40, 0],
-								color: '#fff',
-								formatter: function (params) {
-									return params.value
-								},
-							},
-						},
-						itemStyle: {
-							normal: {
-								color: 'skyblue',
-							},
-						},
-						data: [
-							11233,
-							23212,
-							21267,
-							18211,
-							18346,
-							19324,
-							13266,
-							12220,
-							10249,
-							9262,
-						],
-					},
-				],
-			})
-			// myChartE.setOption({
-			// 	series: [
-			// 		{
-			// 			type: 'liquidFill',
-			// 			radius: '80%',
-			// 			backgroundStyle: {
-			// 				color: 'transparent',
-			// 			},
-			// 			outline: {
-			// 				borderDistance: 0,
-			// 				itemStyle: {
-			// 					borderWidth: 2,
-			// 					borderColor: 'rgba(0, 140, 239, 1)',
-			// 					shadowColor: 'rgba(255, 255, 255, 1)',
-			// 					shadowBlur: 15,
-			// 				},
-			// 			},
-			// 			data: [
-			// 				{
-			// 					value: 63 / 100,
-			// 					name: '融资对接率',
-			// 					direction: 'left',
-			// 				},
-			// 				// 层次
-			// 				0.5,
-			// 				0.4,
-			// 				0.3,
-			// 			],
-			// 			label: {
-			// 				normal: {
-			// 					textStyle: {
-			// 						color: '#333',
-			// 						fontSize: 30,
-			// 						fontWeight: 'normal',
-			// 						fontFamily: 'DINCondensed-Bold',
-			// 					},
-			// 					position: ['50%', '30%'],
-			// 				},
-			// 			},
-			// 		},
-			// 	],
-			// })
-			let dataMap = [
-				{
-					name: '杭州市',
-					value: 400,
-				},
-				{
-					name: '湖州市',
-					value: 125,
-				},
-				{
-					name: '嘉兴市',
-					value: 300,
-				},
-				{
-					name: '绍兴市',
-					value: 20,
-				},
-				{
-					name: '宁波市',
-					value: 10,
-				},
-				{
-					name: '舟山市',
-					value: 300,
-				},
-				{
-					name: '衢州市',
-					value: 200,
-				},
-				{
-					name: '金华市',
-					value: 133,
-				},
-				{
-					name: '台州市',
-					value: 50,
-				},
-				{
-					name: '丽水市',
-					value: 100,
-				},
-				{
-					name: '温州市',
-					value: 200,
-				},
-			]
-			let zhejiang = './data/zhejiang.json'
-			$.getJSON(zhejiang, function (obj) {
-				echarts.registerMap('zhejiang', obj)
-
-				myChartF.setOption({
-					tooltip: {
-						trigger: 'item',
-						formatter: function (params) {
-							if (typeof params.value[2] == 'undefined') {
-								return params.name + ' : ' + params.value
-							} else {
-								return params.name + ' : ' + params.value[2]
-							}
-						},
-					},
-					visualMap: {
-						show: true,
-						min: 0,
-						max: 500,
-						left: 'left',
-						top: 'bottom',
-						text: ['高', '低'], // 文本，默认为数值文本
-						calculable: true,
-						inRange: {
-							color: ['#9dc4f6', '#3089f9'],
-						},
-					},
-					series: [
-						{
-							type: 'map',
-							map: 'zhejiang',
-							mapType: 'zhejiang',
-							label: {
-								show: true,
-								color: '#ffffff',
-								emphasis: {
-									color: 'white',
-									show: false,
-								},
-							},
-							itemStyle: {
-								normal: {
-									areaColor: '#3a7fd5',
-									borderColor: '#9dc4f6', //线
-									borderWidth: 1,
-									shadowColor: '#092f8f', //外发光
-									shadowBlur: 10,
-								},
-								emphasis: {
-									areaColor: '#0a2dae', //悬浮区背景
-								},
-							},
-							data: dataMap,
-						},
-					],
-				})
 			})
 		</script>
 	</body>
